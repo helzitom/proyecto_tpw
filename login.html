@@ -5,10 +5,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inicia Sesión o Registrate</title>
     <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
 </head>
 <body>
-    <div>
-        
+    <header>
+        <div class="logo-container">
+                    <img src="assets/img/logo.png" alt="Archivo no encontrado" class="header-logo">
+        </div>
+    </header>
+    <div class="form-container">
+        <form action="">
+            <h3>Inicio de Sesión</h3>
+            <label for="">Usuario</label>
+            <div class="input-form">
+                <i class="bi bi-person"></i>
+                <input type="text" class="input-usuario" placeholder="Ingrese su usuario">
+            </div>
+            <label for="">Contraseña</label>
+            <div class="input-form">
+                <i class="bi bi-lock"></i>
+                <input type="password" class="input-contraseña" placeholder="Ingrese su contraseña">
+            </div>
+            <a href="#">¿Olvidaste la contraseña?</a>
+            <button class="btn" type="submit">Ingresar</button>
+            <p>¿Aún no tienes una cuenta?
+                <a href="#">Registrate aquí</a>
+            </p>
+            <p>O con</p>
+            <div class="other-logins">
+                <a href="https://facebook.com">
+                    <i class="bi bi-facebook"></i>
+                </a>
+                <a href="https://gmail.com">
+                    <i class="bi bi-google"></i>
+                </a>
+                <a href="https://account.apple.com/sign-in">
+                    <i class="bi bi-apple"></i>
+                </a>
+            </div>
+        </form>
     </div>
+    <footer>
+    <p class="copyright">Todos los derechos reservados © - 2025</p>
+    </footer>
 </body>
 </html>
