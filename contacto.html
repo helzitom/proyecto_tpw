@@ -1,20 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contáctanos</title>
     <link rel="stylesheet" href="css/contacto.css">
 </head>
+
 <body>
     <header>
-
+        <h1>Academia de Box - Contacto</h1>
+        <nav>
+            <a href="index.html">Inicio</a>
+            <a href="contacto.html">Contacto</a>
+            <a href="login.html">Iniciar Sesión</a>
+        </nav>
     </header>
-    <nav>
 
-    </nav>
+    <div class="contenedor">
+        <h2>Información de Contacto</h2>
+        <table>
+            <tr>
+                <th>Tipo</th>
+                <th>Detalles</th>
+            </tr>
+            <tr>
+                <td>Dirección</td>
+                <td>Av. Los Campeones 123, Lima - Perú</td>
+            </tr>
+            <tr>
+                <td>Teléfono</td>
+                <td>+51 987 654 321</td>
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td>contacto@academiabox.com</td>
+            </tr>
+        </table>
+
+        <h2>Formulario de Contacto</h2>
+        <form action="#" method="post">
+            <label for="nombre">Nombre:</label><br>
+            <input type="text" id="nombre" name="nombre" required><br><br>
+
+            <label for="email">Correo Electrónico:</label><br>
+            <input type="email" id="email" name="email" required><br><br>
+
+            <label for="mensaje">Mensaje:</label><br>
+            <textarea id="mensaje" name="mensaje" rows="5" required></textarea><br><br>
+
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+
     <footer>
-
+        <p>© 2025 Academia de Box</p>
     </footer>
 </body>
+
 </html>
