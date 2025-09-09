@@ -1,26 +1,102 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>MCombat</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/header.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #111;
+            color: #fff;
+        }
+        header {
+            background-color: #222;
+            padding: 20px;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            color: #ff3c00;
+        }
+        nav {
+            margin-top: 10px;
+        }
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+        }
+        nav a:hover {
+            color: #ff3c00;
+        }
+        section {
+            padding: 40px;
+            text-align: center;
+        }
+        section h2 {
+            color: #ff3c00;
+        }
+        .contenedor {
+            max-width: 1000px;
+            margin: auto;
+        }
+        .imagenes {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+        .imagenes img {
+            width: 300px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        table {
+            width: 90%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            font-size: 16px;
+        }
+        th, td {
+            border: 1px solid #444;
+            padding: 12px;
+            text-align: center;
+        }
+        th {
+            background: #222;
+            color: #ff3c00;
+        }
+        tr:nth-child(even) {
+            background: #1a1a1a;
+        }
+        footer {
+            background-color: #222;
+            text-align: center;
+            padding: 15px;
+            margin-top: 30px;
+        }
+    </style>
 </head>
-
 <body>
     <div id="header"></div>
-
+  
     <section id="inicio">
         <div class="contenedor">
             <h2>Bienvenidos a nuestra Academia de Box</h2>
-            <p>Entrena con disciplina, mejora tu técnica y alcanza tus metas físicas y mentales. Somos más que un
-                gimnasio, somos una familia de campeones.</p>
+            <p>Entrena con disciplina, mejora tu técnica y alcanza tus metas físicas y mentales. Somos más que un gimnasio, somos una familia de campeones.</p>
             <div class="imagenes">
-                <img src="assets/img/img_1.jpeg" alt="Box entrenamiento">
-                <img src="assets/img/img_2.jpeg" alt="Boxeo en acción">
+                <img src="https://images.pexels.com/photos/4761793/pexels-photo-4761793.jpeg" alt="Box entrenamiento">
+                <img src="https://images.pexels.com/photos/290416/pexels-photo-290416.jpeg" alt="Boxeo en acción">
             </div>
         </div>
     </section>
@@ -28,16 +104,14 @@
     <section id="mision">
         <div class="contenedor">
             <h2>Nuestra Misión</h2>
-            <p>Formar deportistas íntegros a través del boxeo, fomentando valores como la disciplina, el respeto y el
-                esfuerzo, ayudando a nuestros alumnos a alcanzar un mejor estilo de vida.</p>
+            <p>Formar deportistas íntegros a través del boxeo, fomentando valores como la disciplina, el respeto y el esfuerzo, ayudando a nuestros alumnos a alcanzar un mejor estilo de vida.</p>
         </div>
     </section>
 
     <section id="vision">
         <div class="contenedor">
             <h2>Nuestra Visión</h2>
-            <p>Ser la academia de box más reconocida a nivel nacional, brindando programas de alto rendimiento y creando
-                campeones dentro y fuera del ring.</p>
+            <p>Ser la academia de box más reconocida a nivel nacional, brindando programas de alto rendimiento y creando campeones dentro y fuera del ring.</p>
         </div>
     </section>
 
@@ -45,11 +119,10 @@
         <div class="contenedor">
             <h2>Servicios</h2>
             <ul style="list-style:none; padding:0;">
-                <li>Clases de boxeo para todas las edades
-                </li>"Desde 14 años a 30+"
-                <li>Entrenamiento personalizado</li>
-                <li>Preparación para competencias</li>
-                <li>Rutinas de acondicionamiento físico</li>
+                <li>🥊 Clases de boxeo para todas las edades</li>
+                <li>💪 Entrenamiento personalizado</li>
+                <li>🏆 Preparación para competencias</li>
+                <li>🔥 Rutinas de acondicionamiento físico</li>
             </ul>
         </div>
     </section>
@@ -59,6 +132,94 @@
 
     <script src="js/cargar.js"></script>
     <script src="js/header.js"></script>
-</body>
+    <!-- Tabla Informativa -->
+    <section id="informacion">
+        <div class="contenedor">
+            <h2>Información General</h2>
+            <table>
+                <tr>
+                    <th>Categoría</th>
+                    <th>Detalle</th>
+                </tr>
+                <tr>
+                    <td>Edades</td>
+                    <td>De 14 a 30 años</td>
+                </tr>
+                <tr>
+                    <td>Niveles</td>
+                    <td>Principiante – Intermedio – Avanzado</td>
+                </tr>
+                <tr>
+                    <td>Horarios</td>
+                    <td>Lunes a Viernes (7:00 am - 9:00 pm)</td>
+                </tr>
+                <tr>
+                    <td>Requisitos</td>
+                    <td>DNI, apto médico, ropa deportiva</td>
+                </tr>
+                <tr>
+                    <td>Modalidad</td>
+                    <td>Clases grupales o personalizadas</td>
+                </tr>
+                <tr>
+                    <td>Ubicación</td>
+                    <td>Av. Los Campeones 123, Lima - Perú</td>
+                </tr>
+            </table>
+        </div>
+    </section>
 
+    <!-- Tabla Membresías -->
+    <section id="membresias">
+        <div class="contenedor">
+            <h2>Planes de Membresía</h2>
+            <table>
+                <tr>
+                    <th>Tipo</th>
+                    <th>Incluye</th>
+                    <th>Precio</th>
+                    <th>Beneficios Extra</th>
+                </tr>
+                <tr>
+                    <td>Básica</td>
+                    <td>2 clases por semana</td>
+                    <td>S/ 100 mensual</td>
+                    <td>Acceso en horarios de clase</td>
+                </tr>
+                <tr>
+                    <td>Intermedia</td>
+                    <td>3-4 clases por semana</td>
+                    <td>S/ 150 mensual</td>
+                    <td>Plan de acondicionamiento + asesoría nutricional</td>
+                </tr>
+                <tr>
+                    <td>Premium</td>
+                    <td>Clases ilimitadas</td>
+                    <td>S/ 200 mensual</td>
+                    <td>Entrenamiento personalizado + guantes de regalo</td>
+                </tr>
+                <tr>
+                    <td>Competencia</td>
+                    <td>Entrenamiento intensivo</td>
+                    <td>S/ 250 mensual</td>
+                    <td>Preparación para peleas amateur + sparring supervisado</td>
+                </tr>
+            </table>
+        </div>
+    </section>
+
+    <section id="contacto">
+        <div class="contenedor">
+            <h2>Contacto</h2>
+            <p>📍 Dirección: Av. Los Campeones 123, Lima - Perú</p>
+            <p>📞 Teléfono: ‪+51 987 654 321‬</p>
+            <p>📧 Email: contacto@academiabox.com</p>
+        </div>
+    </section>
+
+  <div id="footer"></div>
+  
+    <script src="js/cargar.js"></script>
+    <script src="js/header.js"></script>
+</body>
 </html>
