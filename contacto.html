@@ -1,62 +1,91 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contáctanos</title>
+    <title>Contacto - MCombat Academy</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/contacto.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/header.css">
 </head>
 
 <body>
-    <header>
-        <h1>Academia de Box - Contacto</h1>
-        <nav>
-            <a href="index.html">Inicio</a>
-            <a href="contacto.html">Contacto</a>
-            <a href="login.html">Iniciar Sesión</a>
-        </nav>
-    </header>
 
+    <div id="header"></div>
     <div class="contenedor">
-        <h2>Información de Contacto</h2>
-        <table>
-            <tr>
-                <th>Tipo</th>
-                <th>Detalles</th>
-            </tr>
-            <tr>
-                <td>Dirección</td>
-                <td>Av. Los Campeones 123, Lima - Perú</td>
-            </tr>
-            <tr>
-                <td>Teléfono</td>
-                <td>+51 987 654 321</td>
-            </tr>
-            <tr>
-                <td>Email</td>
-                <td>contacto@academiabox.com</td>
-            </tr>
-        </table>
-
-        <h2>Formulario de Contacto</h2>
-        <form action="#" method="post">
-            <label for="nombre">Nombre:</label><br>
-            <input type="text" id="nombre" name="nombre" required><br><br>
-
-            <label for="email">Correo Electrónico:</label><br>
-            <input type="email" id="email" name="email" required><br><br>
-
-            <label for="mensaje">Mensaje:</label><br>
-            <textarea id="mensaje" name="mensaje" rows="5" required></textarea><br><br>
-
-            <button type="submit">Enviar</button>
-        </form>
+        <h1 class="page-title">Contáctanos</h1>
+        
+        <div class="contact-grid">
+            <div class="contact-info">
+                <h2>Información de Contacto</h2>
+                <table class="contact-table">
+                    <tr>
+                        <th>Tipo</th>
+                        <th>Detalles</th>
+                    </tr>
+                    <tr>
+                        <td>Dirección</td>
+                        <td>Av. Los Campeones 123, Lima - Perú</td>
+                    </tr>
+                    <tr>
+                        <td>Teléfono</td>
+                        <td>+51 987 654 321</td>
+                    </tr>
+                    <tr>
+                        <td>Email</td>
+                        <td>contacto@mcombat.com</td>
+                    </tr>
+                    <tr>
+                        <td>Horario</td>
+                        <td>Lun-Vie: 6:00 AM - 10:00 PM<br>Sáb-Dom: 8:00 AM - 8:00 PM</td>
+                    </tr>
+                </table>
+                
+                <div class="social-contact">
+                    <h3>Síguenos en redes sociales</h3>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="contact-form">
+                <h2>Envíanos un mensaje</h2>
+                <form action="#" method="post">
+                    <div class="form-group">
+                        <label for="nombre">Nombre completo:</label>
+                        <input type="text" id="nombre" name="nombre" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Correo electrónico:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="asunto">Asunto:</label>
+                        <input type="text" id="asunto" name="asunto" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="mensaje">Mensaje:</label>
+                        <textarea id="mensaje" name="mensaje" required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn-submit">Enviar mensaje</button>
+                </form>
+            </div>
+        </div>
     </div>
+    <div id="footer"></div>
 
-    <footer>
-        <p>© 2025 Academia de Box</p>
-    </footer>
+    <script src="js/cargar.js"></script>
+    <script src="js/header.js"></script>
 </body>
 
 </html>
