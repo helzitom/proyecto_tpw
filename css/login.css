@@ -3,7 +3,7 @@
 }
 
 body{
-    background-color: #a04040;
+    background-color: #111;
 }
 
 .logo-container{
@@ -38,7 +38,7 @@ h3, i, a{
 
 button{
     width: 100%;
-    background-color: #a04040;
+    background-color: #111;
     color: whitesmoke;
     padding: .8rem;
     font-weight: bold;
