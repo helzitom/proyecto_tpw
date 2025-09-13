@@ -4,17 +4,62 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inicia Sesión o Registrate</title>
+    
+    <style>
+        /*
+          El cuerpo de la página se encarga de centrar el contenido
+        */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            position: relative;
+            
+            /* El fondo ahora es un color sólido para que la "capa" de fondo sea visible */
+            background-color: #000;
+        }
+
+        /*
+          Esta es la nueva "capa" de fondo. Usamos el pseudo-elemento ::before
+          para crear una capa con la imagen y el efecto.
+        */
+        body::before {
+            content: '';
+            position: fixed; /* Mantiene la imagen fija al hacer scroll */
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('assets/img/logo.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            
+            /* Aplica el filtro de desenfoque y opacidad SÓLO a esta capa */
+            filter: blur(3px) opacity(0.5); /* Ajusta los valores para el efecto que quieras */
+            
+            /* Coloca esta capa detrás de todo lo demás */
+            z-index: -1;
+        }
+
+        /* Asegura que el cuadro del login no cambie y su contenido esté claro */
+        .form-container {
+            z-index: 1; 
+            /* Para que el cuadro sea visible sobre el fondo borroso */
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+    </style>
+
     <link rel="stylesheet" href="css/login.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
 </head>
 <body>
-    <header>
-        <div class="logo-container">
-            <a href="index.html">
-                <img src="assets/img/logo.png" alt="Archivo no encontrado" class="header-logo">
-            </a>                  
-        </div>
-    </header>
     <div class="form-container">
         <form action="">
             <h3>Inicio de Sesión</h3>
@@ -48,7 +93,7 @@
         </form>
     </div>
     <footer>
-    <p class="copyright">MKombat © - 2025 </p>
+        <p class="copyright">MKombat © - 2025 </p>
     </footer>
 </body>
 </html>
