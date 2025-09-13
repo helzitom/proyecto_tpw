@@ -8,6 +8,121 @@
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/footer.css">
+    <style>
+        /* Estilos para la nueva tabla de membresías */
+        body {
+            background-color: #10155e;
+            font-family: sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        
+        #planes {
+            background-color: #fff;
+            padding: 60px 20px;
+        }
+
+        .plan-header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .plan-header h2 {
+            font-size: 2.5em;
+            color: #333;
+        }
+
+        .plan-header p {
+            font-size: 1.2em;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .pricing-table-container {
+            width: 100%;
+            overflow-x: auto;
+            background-color: #fff;
+            padding: 20px;
+            box-sizing: border-box;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border-radius: 8px;
+        }
+        
+        .pricing-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-family: sans-serif;
+            min-width: 600px;
+        }
+        
+        .pricing-table th, .pricing-table td {
+            padding: 15px;
+            border: 1px solid #eee;
+            text-align: center;
+            background-color: #fff;
+            color: #000;
+        }
+        
+        .pricing-table th {
+            font-weight: bold;
+        }
+        
+        .pricing-table .feature-col {
+            text-align: left;
+            font-weight: bold;
+        }
+        
+        .pricing-table .plan-name {
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+        
+        .pricing-table .plan-black,
+        .pricing-table .plan-fit,
+        .pricing-table .plan-smart {
+            background-color: #fff;
+        }
+        
+        .pricing-table .check {
+            color: #109437;
+            font-size: 1.5em;
+        }
+        
+        .pricing-table .cross {
+            color: #ff4136;
+            font-size: 1.5em;
+        }
+
+        .pricing-table .price {
+            font-size: 1.8em;
+            font-weight: bold;
+        }
+
+        .pricing-table .price-details {
+            font-size: 0.9em;
+            color: #666;
+        }
+
+        .btn-inscripcion {
+            display: block;
+            width: 250px;
+            margin: 40px auto;
+            padding: 15px 30px;
+            background-color: #f7a300;
+            color: #fff;
+            text-align: center;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 1.2em;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .btn-inscripcion:hover {
+            background-color: #d18a00;
+        }
+    </style>
 </head>
 <body>
     <div id="header"></div>
@@ -46,90 +161,86 @@
             </ul>
         </div>
     </section>
-    <section id="informacion">
-        <div class="contenedor">
-            <h2>Información General</h2>
-            <table>
-                <tr>
-                    <th>Categoría</th>
-                    <th>Detalle</th>
-                </tr>
-                <tr>
-                    <td>Edades</td>
-                    <td>De 14 a 30 años</td>
-                </tr>
-                <tr>
-                    <td>Niveles</td>
-                    <td>Principiante – Intermedio – Avanzado</td>
-                </tr>
-                <tr>
-                    <td>Horarios</td>
-                    <td>Lunes a Viernes (7:00 am - 9:00 pm)</td>
-                </tr>
-                <tr>
-                    <td>Requisitos</td>
-                    <td>DNI, apto médico, ropa deportiva</td>
-                </tr>
-                <tr>
-                    <td>Modalidad</td>
-                    <td>Clases grupales o personalizadas</td>
-                </tr>
-                <tr>
-                    <td>Ubicación</td>
-                    <td>Av. Los Campeones 123, Lima - Perú</td>
-                </tr>
+    
+    <section id="planes">
+        <div class="plan-header">
+            <h2>ELIGE TU PLAN</h2>
+            <p>¡Comienza a entrenar con nosotros! Elige el plan que quieras y nos vemos en la sede de tu preferencia.</p>
+        </div>
+        <div class="pricing-table-container">
+            <table class="pricing-table">
+                <thead>
+                    <tr>
+                        <th>Más beneficios</th>
+                        <th class="plan-name plan-black">PLAN Black</th>
+                        <th class="plan-name plan-fit">PLAN Fit</th>
+                        <th class="plan-name plan-smart">PLAN Smart</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="feature-col">Entrena en todos los gimnasios de MKombat Academy en Perú y Latinoamérica (+1700)</td>
+                        <td><span class="check">&#10003;</span></td>
+                        <td><span class="cross">&#10005;</span></td>
+                        <td><span class="cross">&#10005;</span></td>
+                    </tr>
+                    <tr>
+                        <td class="feature-col">Acceso ilimitado a todas las áreas de peso libre e integrado - Máquinas, pesas, discos y barras</td>
+                        <td><span class="check">&#10003;</span></td>
+                        <td><span class="check">&#10003;</span></td>
+                        <td><span class="check">&#10003;</span></td>
+                    </tr>
+                    <tr>
+                        <td class="feature-col">Clases grupales con profesores - Actívate, baila y relájate</td>
+                        <td><span class="check">&#10003;</span></td>
+                        <td><span class="check">&#10003;</span></td>
+                        <td><span class="check">&#10003;</span></td>
+                    </tr>
+                    <tr>
+                        <td class="feature-col">MKombat App - Tu plan de entrenamiento personalizado</td>
+                        <td><span class="check">&#10003;</span></td>
+                        <td><span class="check">&#10003;</span></td>
+                        <td><span class="check">&#10003;</span></td>
+                    </tr>
+                    <tr>
+                        <td class="feature-col">Relájate en los sillones de masajes</td>
+                        <td><span class="check">&#10003;</span></td>
+                        <td><span class="cross">&#10005;</span></td>
+                        <td><span class="cross">&#10005;</span></td>
+                    </tr>
+                    <tr>
+                        <td class="feature-col">5 invitados al mes en el gimnasio que quieras</td>
+                        <td><span class="check">&#10003;</span></td>
+                        <td><span class="cross">&#10005;</span></td>
+                        <td><span class="cross">&#10005;</span></td>
+                    </tr>
+                    <tr>
+                        <td class="feature-col">*Valores promocionales</td>
+                        <td>
+                            <div class="price">S/ 4,90*</div>
+                            <div class="price-details">en el 1er mes, después<br>S/ 119,90/mes</div>
+                            <div class="price-details">12 meses de fidelidad</div>
+                        </td>
+                        <td>
+                            <div class="price">S/ 4,90*</div>
+                            <div class="price-details">en el 1er mes, después<br>S/ 89,90/mes</div>
+                            <div class="price-details">12 meses de fidelidad</div>
+                        </td>
+                        <td>
+                            <div class="price">S/ 4,90*</div>
+                            <div class="price-details">en el 1er mes, después<br>S/ 99,90/mes</div>
+                            <div class="price-details">Sin fidelidad</div>
+                        </td>
+                    </tr>
+                </tbody>
             </table>
         </div>
+        <a href="contacto.html" class="btn-inscripcion">¡Inscríbete ya!</a>
     </section>
-
-    <section id="membresias">
-        <div class="contenedor">
-            <h2>Planes de Membresía</h2>
-            <table>
-                <tr>
-                    <th>Tipo</th>
-                    <th>Incluye</th>
-                    <th>Precio</th>
-                    <th>Beneficios Extra</th>
-                </tr>
-                <tr>
-                    <td>Básica</td>
-                    <td>2 clases por semana</td>
-                    <td>S/ 100 mensual</td>
-                    <td>Acceso en horarios de clase</td>
-                </tr>
-                <tr>
-                    <td>Intermedia</td>
-                    <td>3-4 clases por semana</td>
-                    <td>S/ 150 mensual</td>
-                    <td>Plan de acondicionamiento + asesoría nutricional</td>
-                </tr>
-                <tr>
-                    <td>Premium</td>
-                    <td>Clases ilimitadas</td>
-                    <td>S/ 200 mensual</td>
-                    <td>Entrenamiento personalizado + guantes de regalo</td>
-                </tr>
-                <tr>
-                    <td>Competencia</td>
-                    <td>Entrenamiento intensivo</td>
-                    <td>S/ 250 mensual</td>
-                    <td>Preparación para peleas amateur + sparring supervisado</td>
-                </tr>
-            </table>
         </div>
     </section>
-
-    <section id="contacto">
-        <div class="contenedor">
-            <h2>Contacto</h2>
-            <p>📍 Dirección: Av. Los Campeones 123, Lima - Perú</p>
-            <p>📞 Teléfono: +51 987 654 32</p>
-            <p>📞 Teléfono: +51 987 654 321</p
-            <p>📧 Email: contacto@academiabox.com</p>
-        </div>
-    </section>
-    <div id="footer"></div>  
+    <div id="footer"></div> 
     <script src="js/cargar.js"></script>
     <script src="js/header.js"></script>
+</body>
 </html>
