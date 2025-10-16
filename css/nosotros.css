@@ -1,0 +1,378 @@
+/* ======== ESTILOS GENERALES ======== */
+html, body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #10155e;
+    color: #fff;
+    min-height: 100%;
+    overflow-x: hidden;
+}
+
+/* ======== CABECERA ======== */
+header {
+    background-color: #222;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    z-index: 10;
+}
+header h1 {
+    margin: 0;
+    color: #ff3c00;
+}
+nav {
+    margin-top: 10px;
+}
+nav a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+}
+nav a:hover {
+    color: #ff3c00;
+}
+
+/* ======== HERO SECTION ======== */
+#nosotros-hero {
+    background: linear-gradient(135deg, #ff3c00, #10155e);
+    padding: 80px 20px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+#nosotros-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><rect width="2" height="2" fill="rgba(255,255,255,0.1)"/></svg>');
+    opacity: 0.3;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero-content h1 {
+    font-size: 3em;
+    margin: 0 0 20px 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.hero-content p {
+    font-size: 1.3em;
+    opacity: 0.9;
+}
+
+/* ======== GRID SECTION ======== */
+#nosotros-grid {
+    padding: 60px 20px;
+    background-color: #10155e;
+}
+
+.grid-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+/* ======== GRID ITEMS ======== */
+.grid-item {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+    padding: 40px;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.grid-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(255, 60, 0, 0.3);
+}
+
+.icon-wrapper {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, #ff3c00, #ff6b3d);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.icon-wrapper i {
+    font-size: 2em;
+    color: #fff;
+}
+
+.grid-item h2 {
+    color: #ff3c00;
+    font-size: 1.8em;
+    margin: 0 0 15px 0;
+}
+
+.grid-item p {
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* ======== ESTADÍSTICAS ======== */
+.estadistica, .equipo-stats {
+    margin-top: 20px;
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.stat, .estadistica {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.numero, .logro-numero {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #f7a300;
+    display: block;
+}
+
+.texto, .logro-texto {
+    font-size: 0.9em;
+    color: rgba(255, 255, 255, 0.7);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* ======== LISTAS ======== */
+.valores-lista, .instalaciones-lista {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0 0 0;
+}
+
+.valores-lista li, .instalaciones-lista li {
+    margin: 15px 0;
+    padding-left: 30px;
+    position: relative;
+    line-height: 1.6;
+}
+
+.valores-lista i, .instalaciones-lista i {
+    position: absolute;
+    left: 0;
+    color: #f7a300;
+    font-size: 1.2em;
+}
+
+/* ======== LOGROS GRID ======== */
+.logros-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.logro-item {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    border: 1px solid rgba(247, 163, 0, 0.3);
+}
+
+/* ======== BLOCKQUOTE ======== */
+blockquote {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 20px;
+    border-left: 4px solid #f7a300;
+    margin: 20px 0 0 0;
+    font-style: italic;
+    border-radius: 5px;
+}
+
+cite {
+    display: block;
+    margin-top: 10px;
+    font-style: normal;
+    color: #f7a300;
+    font-size: 0.9em;
+}
+
+/* ======== SECCIÓN CTA ======== */
+#cta-section {
+    background: linear-gradient(135deg, #ff3c00, #ff6b3d);
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.cta-content h2 {
+    font-size: 2.5em;
+    margin: 0 0 15px 0;
+}
+
+.cta-content p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+    opacity: 0.9;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn-cta {
+    display: inline-block;
+    padding: 15px 40px;
+    text-decoration: none;
+    font-size: 1.1em;
+    font-weight: bold;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    border: 2px solid #fff;
+}
+
+.btn-cta.primary {
+    background-color: #fff;
+    color: #ff3c00;
+}
+
+.btn-cta.primary:hover {
+    background-color: transparent;
+    color: #fff;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+}
+
+.btn-cta.secondary {
+    background-color: transparent;
+    color: #fff;
+}
+
+.btn-cta.secondary:hover {
+    background-color: #fff;
+    color: #ff3c00;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* ======== FOOTER ======== */
+footer {
+    background-color: #222;
+    text-align: center;
+    padding: 15px;
+    color: #fff;
+}
+
+/* ======== MEDIA QUERIES ======== */
+
+/* TABLETAS */
+@media (max-width: 992px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .hero-content h1 {
+        font-size: 2.5em;
+    }
+
+    .hero-content p {
+        font-size: 1.1em;
+    }
+
+    .grid-item {
+        padding: 30px;
+    }
+}
+
+/* MÓVILES */
+@media (max-width: 600px) {
+    body {
+        font-size: 14px;
+    }
+
+    header h1 {
+        font-size: 1.5em;
+    }
+
+    nav {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    nav a {
+        margin: 0;
+    }
+
+    #nosotros-hero {
+        padding: 60px 20px;
+    }
+
+    .hero-content h1 {
+        font-size: 2em;
+    }
+
+    .hero-content p {
+        font-size: 1em;
+    }
+
+    .grid-container {
+        gap: 20px;
+    }
+
+    .grid-item {
+        padding: 25px;
+    }
+
+    .grid-item h2 {
+        font-size: 1.5em;
+    }
+
+    .icon-wrapper {
+        width: 60px;
+        height: 60px;
+    }
+
+    .icon-wrapper i {
+        font-size: 1.5em;
+    }
+
+    .numero, .logro-numero {
+        font-size: 2em;
+    }
+
+    .cta-content h2 {
+        font-size: 1.8em;
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .btn-cta {
+        width: 80%;
+    }
+
+    .logros-grid {
+        grid-template-columns: 1fr;
+    }
+}
