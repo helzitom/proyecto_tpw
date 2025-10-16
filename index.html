@@ -8,220 +8,6 @@
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/footer.css">
-    <style>
-        /* Estilos para la nueva tabla de membresías */
-        body {
-            background-color: #10155e;
-            font-family: sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-        
-        #planes {
-            background-color: #fff;
-            padding: 60px 20px;
-        }
-
-        .plan-header {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        .plan-header h2 {
-            font-size: 2.5em;
-            color: #333;
-        }
-
-        .plan-header p {
-            font-size: 1.2em;
-            color: #666;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .pricing-table-container {
-            width: 100%;
-            overflow-x: auto;
-            background-color: #fff;
-            padding: 20px;
-            box-sizing: border-box;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            border-radius: 8px;
-        }
-        
-        .pricing-table {
-            width: 100%;
-            border-collapse: collapse;
-            font-family: sans-serif;
-            min-width: 600px;
-        }
-        
-        .pricing-table th, .pricing-table td {
-            padding: 15px;
-            border: 1px solid #eee;
-            text-align: center;
-            background-color: #fff;
-            color: #000;
-        }
-        
-        .pricing-table th {
-            font-weight: bold;
-        }
-        
-        .pricing-table .feature-col {
-            text-align: left;
-            font-weight: bold;
-        }
-        
-        .pricing-table .plan-name {
-            font-size: 1.2em;
-            font-weight: bold;
-        }
-        
-        .pricing-table .plan-black,
-        .pricing-table .plan-fit,
-        .pricing-table .plan-smart {
-            background-color: #fff;
-        }
-        
-        .pricing-table .check {
-            color: #109437;
-            font-size: 1.5em;
-        }
-        
-        .pricing-table .cross {
-            color: #ff4136;
-            font-size: 1.5em;
-        }
-
-        .pricing-table .price {
-            font-size: 1.8em;
-            font-weight: bold;
-        }
-
-        .pricing-table .price-details {
-            font-size: 0.9em;
-            color: #666;
-        }
-
-        .btn-inscripcion {
-            display: block;
-            width: 250px;
-            margin: 40px auto;
-            padding: 15px 30px;
-            background-color: #f7a300;
-            color: #fff;
-            text-align: center;
-            border-radius: 5px;
-            text-decoration: none;
-            font-size: 1.2em;
-            font-weight: bold;
-            transition: background-color 0.3s;
-        }
-
-        .btn-inscripcion:hover {
-            background-color: #d18a00;
-        }
-
-
-        @media (max-width: 768px) {
-    /* General */
-    body {
-        font-size: 16px;
-        line-height: 1.4;
-    }
-
-    /* Ajustar encabezados */
-    h2 {
-        font-size: 1.8em;
-    }
-
-    /* Sección de inicio */
-    #inicio .imagenes {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 15px;
-    }
-
-    #inicio img {
-        width: 90%;
-        height: auto;
-        border-radius: 8px;
-    }
-
-    /* Tabla de planes: convertir en formato vertical */
-    .pricing-table-container {
-        overflow-x: hidden;
-    }
-
-    .pricing-table {
-        display: block;
-    }
-
-    .pricing-table thead {
-        display: none; /* Oculta los encabezados de columnas */
-    }
-
-    .pricing-table tr {
-        display: block;
-        margin-bottom: 25px;
-        border: 2px solid #f0f0f0;
-        border-radius: 8px;
-        padding: 10px;
-    }
-
-    .pricing-table td {
-        display: flex;
-        justify-content: space-between;
-        text-align: left;
-        padding: 10px;
-        border: none;
-        border-bottom: 1px solid #ddd;
-    }
-
-    .pricing-table .price {
-        font-size: 1.4em;
-    }
-
-    .pricing-table .price-details {
-        font-size: 0.9em;
-    }
-
-    .btn-inscripcion {
-        width: 80%;
-        font-size: 1em;
-    }
-}
-
-@media (min-width: 769px) and (max-width: 1024px) {
-    .contenedor {
-        padding: 0 30px;
-    }
-
-    .pricing-table th, .pricing-table td {
-        padding: 10px;
-        font-size: 0.95em;
-    }
-
-    .btn-inscripcion {
-        width: 60%;
-    }
-}
-
-@media (min-width: 1200px) {
-    .contenedor {
-        max-width: 1200px;
-        margin: auto;
-    }
-
-    .pricing-table th, .pricing-table td {
-        font-size: 1em;
-    }
-}
-
-
-    </style>
 </head>
 <body>
     <div id="header"></div>
@@ -248,7 +34,13 @@
             <p>Ser la academia de box más reconocida a nivel nacional, brindando programas de alto rendimiento y creando campeones dentro y fuera del ring.</p>
         </div>
     </section>
-
+    <section id="nosotros-link">
+        <div class="contenedor">
+            <button class="btn-link">
+                <a href="nosotros.html">¿Quieres saber más? Ingresa aquí</a>
+            </button>
+        </div>
+    </section>
     <section id="servicios">
         <div class="contenedor">
             <h2>Servicios</h2>
@@ -261,83 +53,14 @@
         </div>
     </section>
     
-    <section id="planes">
-        <div class="plan-header">
-            <h2>ELIGE TU PLAN</h2>
-            <p>¡Comienza a entrenar con nosotros! Elige el plan que quieras y nos vemos en la sede de tu preferencia.</p>
-        </div>
-        <div class="pricing-table-container">
-            <table class="pricing-table">
-                <thead>
-                    <tr>
-                        <th>Más beneficios</th>
-                        <th class="plan-name plan-black">PLAN Black</th>
-                        <th class="plan-name plan-fit">PLAN Fit</th>
-                        <th class="plan-name plan-smart">PLAN Smart</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td class="feature-col">Entrena en todos los gimnasios de MKombat Academy en Perú y Latinoamérica (+1700)</td>
-                        <td><span class="check">&#10003;</span></td>
-                        <td><span class="cross">&#10005;</span></td>
-                        <td><span class="cross">&#10005;</span></td>
-                    </tr>
-                    <tr>
-                        <td class="feature-col">Acceso ilimitado a todas las áreas de peso libre e integrado - Máquinas, pesas, discos y barras</td>
-                        <td><span class="check">&#10003;</span></td>
-                        <td><span class="check">&#10003;</span></td>
-                        <td><span class="check">&#10003;</span></td>
-                    </tr>
-                    <tr>
-                        <td class="feature-col">Clases grupales con profesores - Actívate, baila y relájate</td>
-                        <td><span class="check">&#10003;</span></td>
-                        <td><span class="check">&#10003;</span></td>
-                        <td><span class="check">&#10003;</span></td>
-                    </tr>
-                    <tr>
-                        <td class="feature-col">MKombat App - Tu plan de entrenamiento personalizado</td>
-                        <td><span class="check">&#10003;</span></td>
-                        <td><span class="check">&#10003;</span></td>
-                        <td><span class="check">&#10003;</span></td>
-                    </tr>
-                    <tr>
-                        <td class="feature-col">Relájate en los sillones de masajes</td>
-                        <td><span class="check">&#10003;</span></td>
-                        <td><span class="cross">&#10005;</span></td>
-                        <td><span class="cross">&#10005;</span></td>
-                    </tr>
-                    <tr>
-                        <td class="feature-col">5 invitados al mes en el gimnasio que quieras</td>
-                        <td><span class="check">&#10003;</span></td>
-                        <td><span class="cross">&#10005;</span></td>
-                        <td><span class="cross">&#10005;</span></td>
-                    </tr>
-                    <tr>
-                        <td class="feature-col">*Valores promocionales</td>
-                        <td>
-                            <div class="price">S/ 4,90*</div>
-                            <div class="price-details">en el 1er mes, después<br>S/ 119,90/mes</div>
-                            <div class="price-details">12 meses de fidelidad</div>
-                        </td>
-                        <td>
-                            <div class="price">S/ 4,90*</div>
-                            <div class="price-details">en el 1er mes, después<br>S/ 89,90/mes</div>
-                            <div class="price-details">12 meses de fidelidad</div>
-                        </td>
-                        <td>
-                            <div class="price">S/ 4,90*</div>
-                            <div class="price-details">en el 1er mes, después<br>S/ 99,90/mes</div>
-                            <div class="price-details">Sin fidelidad</div>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-        <a href="contacto.html" class="btn-inscripcion">¡Inscríbete ya!</a>
-    </section>
+    <section id="ver-planes">
+        <div class="contenedor">
+            <button class="btn-link">
+                <a href="planes.html">Ver nuestros planes</a>
+            </button>
         </div>
     </section>
+
     <div id="footer"></div> 
     <script src="js/cargar.js"></script>
     <script src="js/header.js"></script>

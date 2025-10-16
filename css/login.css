@@ -1,112 +1,170 @@
-*{
+/* === ESTILOS GENERALES === */
+* {
     font-family: sans-serif;
+    box-sizing: border-box;
 }
 
-body{
-    background-color: #111;
-}
-
-.logo-container{
-    margin-left: 20px;
-}
-.header-logo{
-    width: 10%;
-    padding: 0;
-    margin: 0;
-}
-
-form{
-    max-width: 380px;
-    width: 100%;
-    margin: 0 auto;
-    background-color: white;
-    color: #333;
+/*
+El cuerpo de la página se encarga de centrar el contenido
+*/
+body {
+    display: flex;
+    justify-content: center;
     align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    position: relative;
+    background-color: #111;
+    overflow: hidden;
+}
+
+/*
+    Esta es la capa de fondo con la imagen desenfocada.
+*/
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('/assets/img/logo.png'); /* Cambia la ruta según tu proyecto */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: blur(3px) opacity(0.5);
+    z-index: -1;
+}
+
+/* === CABECERA === */
+.logo-container {
+    margin-left: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.header-logo {
+    width: 10%;
+    max-width: 80px;
+    transition: transform 0.3s ease;
+}
+
+.header-logo:hover {
+    transform: scale(1.1);
+}
+
+/* === CONTENEDOR DEL FORMULARIO === */
+.form-container {
+    z-index: 1;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     text-align: center;
-    padding: 1rem;
-    border-radius: 30px;
-    >*{
-        display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: aparecer 0.8s ease forwards;
+}
+
+/* === FORMULARIO === */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 400px;
+    width: 100%;
+    color: #333;
+    text-align: center;
+}
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
 
-h3, i, a{
+h3, i, a {
     color: #333;
     font-weight: bold;
     text-decoration: none;
 }
 
-button{
-    width: 100%;
-    background-color: #111;
-    color: whitesmoke;
-    padding: .8rem;
-    font-weight: bold;
-    border: none;
-    border-radius: 10px;
-    transition: background-color .4s ease-in-out;
-}
-
-label{
+/* === INPUTS === */
+label {
     text-align: left;
-    margin-top: .5rem;
+    margin-top: 0.5rem;
     font-size: 1rem;
 }
 
 .input-form {
     display: flex;
+    align-items: center;
     border: 1.5px solid #ecedec;
     border-radius: 10px;
     height: 50px;
-    align-items: center;
     padding-left: 10px;
-    transition: 0.1s ease-in-out;
-}
-
-input{
-    margin-left: 10px;
-    border-radius: 10px;
-    border: none;
-    width: 100%;
-    height: 100%;
-    font-size: 1rem;
-}
-
-.input-form:focus {
-    outline: none;
-    border: none;
+    transition: border 0.3s ease;
 }
 
 .input-form:focus-within {
     border: 1.5px solid #2d79f3;
 }
 
+input {
+    margin-left: 10px;
+    border-radius: 10px;
+    border: none;
+    width: 100%;
+    height: 100%;
+    font-size: 1rem;
+    outline: none;
+}
 
-a{
+/* === BOTONES === */
+button {
+    width: 100%;
+    background-color: #111;
+    color: whitesmoke;
+    padding: 0.8rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.4s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background-color: #652828;
+    transform: scale(1.02);
+}
+
+/* === TEXTO Y ENLACES === */
+a {
     color: rgb(110, 112, 241);
-    font-size: .9rem;
-    padding: 1rem;
+    font-size: 0.9rem;
+    padding: 0.5rem;
+    transition: color 0.3s ease;
 }
 
-p{
-    font-size:1rem;
+a:hover {
+    color: #2d79f3;
 }
 
-i{
+p {
+    font-size: 1rem;
+}
+
+i {
     font-size: 30px;
 }
 
-.btn:hover {
-    background-color: #652828;
-}
-
-.form-container{
-    height: 60vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
+/* === PIE DE PÁGINA === */
 footer {
     position: fixed;
     bottom: 0;
@@ -114,9 +172,63 @@ footer {
     width: 100%; 
     color: white;
     text-align: center;
-    padding: .5rem;
+    padding: 0.5rem;
+    background-color: rgba(17, 17, 17, 0.8);
+    z-index: 2;
 }
 
-.copyright{
+.copyright {
     font-size: 1.1rem;
+}
+
+/* === MEDIA QUERIES === */
+
+/* --- Escritorio --- */
+@media (min-width: 1025px) {
+    .form-container {
+        width: 420px;
+        padding: 2.5rem;
+    }
+}
+
+/* --- Tabletas --- */
+@media (max-width: 1024px) and (min-width: 768px) {
+    .form-container {
+        width: 80%;
+        padding: 2rem;
+    }
+
+    .header-logo {
+        width: 15%;
+    }
+}
+
+/* --- Móviles --- */
+@media (max-width: 767px) {
+    body {
+        flex-direction: column;
+    }
+
+    .logo-container {
+        justify-content: center;
+        margin: 1rem 0;
+    }
+
+    .form-container {
+        width: 90%;
+        padding: 1.5rem;
+        border-radius: 20px;
+    }
+
+    input {
+        font-size: 0.95rem;
+    }
+
+    button {
+        font-size: 0.9rem;
+    }
+
+    footer {
+        font-size: 0.9rem;
+    }
 }
