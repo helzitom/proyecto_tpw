@@ -1,52 +1,230 @@
-<footer class="site-footer">
-    <div class="container">
-        <div class="footer-content">
-            <div class="footer-logo">
-                <img src="assets/img/logo.png" alt="MCombat Academy" class="footer-logo-img">
-                <h3>MKombat Academy</h3>
-                <p>Tu camino hacia la excelencia marcial</p>
-            </div>
-            
-            <div class="footer-links">
-                <h4>Enlaces Rápidos</h4>
-                <ul>
-                    <li><a href="#">Inicio</a></li>
-                    <li><a href="#">Misión</a></li>
-                    <li><a href="#">Visión</a></li>
-                    <li><a href="#">Servicios</a></li>
-                    <li><a href="#">Contacto</a></li>
-                </ul>
-            </div>
-            
-            <div class="footer-social">
-                <h4>Síguenos</h4>
-                <div class="social-icons">
-                    <a href="#"><img src="assets/img/facebook.png" alt="Facebook"></a>
-                    <a href="#"><img src="assets/img/twitter.webp" alt="Twitter"></a>
-                    <a href="#"><img src="assets/img/instagran.png" alt="Instagram"></a>
-                    <a href="#"><img src="assets/img/discor.png" alt="Discord"></a>
-                </div>
-                <div class="newsletter">
-                    <input type="email" placeholder="Tu correo electrónico">
-                    <button>Suscribirse</button>
-                </div>
-            </div>
-            
-            <div class="footer-contact">
-                <h4>Contacto</h4>
-                <p><i class="icon">📍</i> Av.Los Campeones 123,Lima-Perú </p>
-                <p><i class="icon">📞</i> +51 987 654 321 </p>
-                <p><i class="icon">✉</i> contacto@mcombat.com</p>
-            </div>
-        </div>
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redes Sociales - MCombat Academy</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* ======================================= */
+        /* 1. ESTILOS BASE Y PALETA */
+        /* ======================================= */
+        /* Paleta: #222 (Negro Carbón) | #F7A300 (Dorado/Naranja) | #CC0000 (Rojo de Boxeo) */
         
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f0f0f0; /* Fondo general claro/grisáceo */
+            color: #333;
+            margin: 0;
+            line-height: 1.6;
+            min-height: 100vh;
+            /* Usamos Flexbox para la estructura principal */
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* -------------------------------------- */
+        /* HEADER (Replicado del diseño) */
+        /* -------------------------------------- */
+        .header-nav {
+            background-color: #222;
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 1.5em;
+            font-weight: 700;
+            color: #f7a300;
+            text-decoration: none;
+        }
+        
+        .nav-menu {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-menu li a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            display: block;
+            transition: background-color 0.3s ease;
+        }
+
+        .nav-menu li a:hover {
+            background-color: rgba(204, 0, 0, 0.5);
+        }
+        
+        .login-btn a {
+            background-color: #f7a300;
+            padding: 8px 15px;
+            border-radius: 5px;
+            margin-left: 20px;
+            color: #222;
+            transition: background-color 0.3s;
+        }
+        .login-btn a:hover {
+            background-color: #CC0000;
+            color: white;
+        }
+        
+        /* ======================================= */
+        /* 2. SECCIÓN PRINCIPAL: ICONOS GRANDES (FLEXBOX) */
+        /* ======================================= */
+        .social-page-container {
+            flex-grow: 1; /* Ocupa el espacio restante para empujar el footer */
+            padding-top: 60px; /* Espacio para el header fijo */
+            background-color: white; /* Dejar esta sección en blanco como querías */
+            
+            /* FLEXBOX: Para centrar el contenido vertical y horizontalmente */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: calc(100vh - 60px - 80px); /* 100vh menos header menos footer (aprox) */
+        }
+        
+        .social-icons-large {
+            /* FLEXBOX: Distribuye los íconos horizontalmente */
+            display: flex;
+            gap: 40px; /* Gran espacio entre íconos */
+            padding: 20px;
+            flex-wrap: wrap; /* Para que se apilen en pantallas pequeñas */
+            justify-content: center;
+        }
+
+        /* Estilo base para los enlaces de íconos */
+        .social-icons-large a {
+            text-decoration: none;
+            transition: transform 0.3s ease; /* Solo transformar en el enlace */
+        }
+
+        /* Estilo para los íconos de Font Awesome */
+        .social-icons-large a i {
+            font-size: 5em; /* Tamaño GRANDE del ícono */
+            padding: 30px;
+            border-radius: 50%;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            border: 5px solid #CC0000; /* Borde Rojo de Boxeo */
+            transition: all 0.3s ease;
+            display: flex; /* Para centrar el ícono si es necesario */
+            justify-content: center;
+            align-items: center;
+            color: #222; /* Color base del ícono */
+        }
+
+        /* Estilo para las imágenes de íconos (como twitter.webp) */
+        .social-icons-large a img {
+            width: 110px; /* Ajusta el tamaño de la imagen */
+            height: 110px;
+            border-radius: 50%;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            border: 5px solid #CC0000; /* Borde Rojo de Boxeo */
+            transition: all 0.3s ease;
+            object-fit: contain; /* Para que la imagen se ajuste bien */
+            padding: 10px; /* Espacio interno para la imagen dentro del círculo */
+            background-color: white; /* Fondo para que la imagen se vea bien */
+        }
+        
+        /* Transición: Efecto Hover para íconos (i) y para imágenes (img) */
+        .social-icons-large a:hover i,
+        .social-icons-large a:hover img {
+            transform: scale(1.15); /* Crece al hacer hover */
+            border-color: #f7a300; /* Borde Dorado */
+            box-shadow: 0 8px 20px rgba(247, 163, 0, 0.5);
+        }
+        /* Color del ícono al hacer hover */
+        .social-icons-large a:hover i {
+             color: #CC0000; /* Color Rojo */
+        }
+        
+        /* Colores específicos para reconocimiento (Font Awesome Icons) */
+        .fa-facebook-f { color: #1877f2; }
+        .fa-instagram { color: #C13584; }
+        /* El color para fa-x-twitter ya no es necesario si usas img */
+        .fa-discord { color: #5865f2; } 
+
+
+        /* ======================================= */
+        /* 3. FOOTER (Barra de Copyright) */
+        /* ======================================= */
+        .site-footer {
+            background-color: #222;
+            color: #f0f0f0;
+            padding: 20px 0;
+            border-top: 4px solid #CC0000;
+        }
+        
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            text-align: center;
+            font-size: 0.85em;
+            color: #aaa;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <header id="header" class="header-nav">
+        <a href="index.html" class="logo">MCombat Academy</a>
+        <nav>
+            <ul class="nav-menu">
+                <li><a href="index.html#inicio">Inicio</a></li>
+                <li><a href="index.html#mision">Misión</a></li>
+                <li><a href="index.html#servicios">Servicios</a></li>
+                <li><a href="#">Redes</a></li>
+                <li class="login-btn"><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="social-page-container">
+        <div class="social-icons-large">
+            
+            <a href="https://facebook.com" target="_blank" title="Síguenos en Facebook">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            
+            <a href="https://instagram.com" target="_blank" title="Síguenos en Instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+            
+            <a href="https://twitter.com" target="_blank" title="Síguenos en X/Twitter">
+                <img src="assets/img/twitter.webp" alt="X/Twitter">
+            </a>
+            
+            <a href="https://discord.com" target="_blank" title="Únete a nuestro Discord">
+                <i class="fab fa-discord"></i>
+            </a>
+            
+        </div>
+    </main>
+    
+    <footer class="site-footer">
         <div class="footer-bottom">
-            <p>&copy; 2025 MKombat Academy. Todos los derechos reservados.</p>
-            <div class="legal-links">
-                <a href="#">Términos de Servicio</a>
-                <a href="#">Política de Privacidad</a>
-                <a href="#">Cookies</a>
-            </div>
+            <p>&copy; 2025 MCombat Academy. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>
         </div>
     </div>
 </footer>
