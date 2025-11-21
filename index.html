@@ -1,16 +1,253 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Academia de Box - Fuerza & Disciplina</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/header.css">
-    <link rel="stylesheet" href="css/footer.css">
+    <style>
+        /* ======================================= */
+        /* 1. ESTILOS GENERALES Y CONSISTENCIA */
+        /* ======================================= */
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f0f0f0; 
+            color: #333;
+            margin: 0;
+            padding-top: 60px; /* Espacio para el header fijo */
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        .contenedor {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h2 {
+            color: #CC0000; 
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        /* Secciones con Fondo Oscuro: Header, Inicio y Footer */
+        .header-nav, footer, #inicio {
+            background-color: #222; 
+            color: white;
+        }
+        
+        #inicio h2 {
+              color: #f7a300; 
+        }
+
+        /* ======================================= */
+        /* 2. HEADER Y NAVEGACIÓN (HEADER NEGRO) */
+        /* ======================================= */
+        .header-nav {
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 1.5em;
+            font-weight: 700;
+            color: #f7a300; 
+            text-decoration: none;
+        }
+        
+        .nav-menu {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-menu li a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            display: block;
+            transition: background-color 0.3s ease;
+        }
+
+        .nav-menu li a:hover {
+            background-color: rgba(204, 0, 0, 0.5); 
+        }
+        
+        /* Estilo del botón Logout/Cerrar Sesión */
+        .login-btn a {
+            background-color: #f7a300; 
+            padding: 8px 15px;
+            border-radius: 5px;
+            margin-left: 20px;
+            color: #222 !important; 
+            transition: background-color 0.3s;
+        }
+        .login-btn a:hover {
+            background-color: #CC0000; 
+            color: white !important;
+        }
+        
+        /* ESTILOS DEL MENÚ DESPLEGABLE (MÓVIL) */
+        .menu-toggle {
+            display: none; /* Oculto por defecto en escritorio */
+            font-size: 1.5em;
+            cursor: pointer;
+            color: #f7a300; 
+        }
+
+        @media (max-width: 900px) {
+            
+            .nav-menu {
+                display: none; /* Oculta el menú normal */
+                flex-direction: column;
+                width: 100%;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                background-color: #222;
+                box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+            }
+            
+            .nav-menu.active {
+                display: flex; /* Muestra el menú cuando está activo */
+            }
+
+            .nav-menu li {
+                text-align: center;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            }
+            
+            .menu-toggle {
+                display: block; /* Muestra el icono de la hamburguesa */
+            }
+        }
+        
+        /* ======================================= */
+        /* 3. SECCIÓN INICIO (IMÁGENES) */
+        /* ======================================= */
+        section {
+            padding: 60px 20px;
+            text-align: center;
+        }
+        
+        #inicio .imagenes {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        #inicio img {
+            max-width: 100%;
+            width: 45%;
+            height: auto;
+            border-radius: 8px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        
+        /* ======================================= */
+        /* 4. FOOTER (PIE DE PÁGINA NEGRO) */
+        /* ======================================= */
+        footer {
+            padding: 40px 20px;
+            text-align: center;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap; 
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0 auto 30px auto;
+            text-align: left;
+            gap: 20px;
+        }
+        
+        .footer-logo-col, .footer-links-col, .footer-social-col, .footer-contact-col {
+            flex: 1; 
+            min-width: 200px;
+            padding: 10px;
+        }
+        
+        footer h3 {
+            color: #f7a300;
+            margin-bottom: 15px;
+            font-size: 1.2em;
+        }
+        
+        .footer-links-col ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .footer-links-col ul li a {
+            color: #ccc;
+            text-decoration: none;
+            line-height: 2.2;
+        }
+        
+        /* Iconos de Redes Sociales */
+        .social-icons a {
+            display: inline-block;
+            margin-right: 15px;
+            color: white;
+            font-size: 1.5em;
+            transition: color 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: #CC0000; 
+        }
+
+        .footer-bottom {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #444;
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.8em;
+            color: #aaa;
+        }
+    </style>
 </head>
+
 <body>
-    <div id="header"></div>
+
+    <header id="header" class="header-nav">
+        <a href="index.html" class="logo">MCombat Academy</a>
+        
+        <div class="menu-toggle" onclick="toggleMenu()">
+            <i class="fa fa-bars"></i>
+        </div>
+
+        <nav>
+            <ul class="nav-menu" id="main-nav">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#mision">Misión</a></li>
+                <li><a href="#vision">Visión</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#planes">Planes</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                <li class="login-btn">
+                    <a href="login.html" onclick="return confirm('¿Está seguro que desea cerrar la sesión de Intranet?')">Logout</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
     <section id="inicio">
         <div class="contenedor">
             <h2>Bienvenidos a nuestra Academia de Box</h2>
@@ -21,26 +258,21 @@
             </div>
         </div>
     </section>
+
     <section id="mision">
         <div class="contenedor">
             <h2>Nuestra Misión</h2>
-            <p>Formar deportistas íntegros a través del boxeo, fomentando valores como la disciplina, el respeto y el esfuerzo, ayudando a nuestros alumnos a alcanzar un mejor estilo de vida.</p>
+            <p>Capacitar a cada miembro, desde principiantes hasta atletas avanzados, proporcionándoles las herramientas, la disciplina y el entrenamiento de élite necesarios para dominar las artes marciales y el fitness funcional. Nos dedicamos a forjar campeones...</p>
         </div>
     </section>
 
     <section id="vision">
         <div class="contenedor">
             <h2>Nuestra Visión</h2>
-            <p>Ser la academia de box más reconocida a nivel nacional, brindando programas de alto rendimiento y creando campeones dentro y fuera del ring.</p>
+            <p>Ser la Academia de Combate y Fitness de referencia en Perú y Latinoamérica, reconocida por nuestro compromiso con la excelencia marcial, la innovación en el entrenamiento y la creación de una comunidad donde la fuerza física se equilibra con la resiliencia mental. Buscamos expandir nuestro legado...</p>
         </div>
     </section>
-    <section id="nosotros-link">
-        <div class="contenedor">
-            <button class="btn-link">
-                <a href="nosotros.html">¿Quieres saber más? Ingresa aquí</a>
-            </button>
-        </div>
-    </section>
+
     <section id="servicios">
         <div class="contenedor">
             <h2>Servicios</h2>
@@ -48,21 +280,66 @@
                 <li>🥊 Clases de boxeo para todas las edades</li>
                 <li>💪 Entrenamiento personalizado</li>
                 <li>🏆 Preparación para competencias</li>
-                <li>🔥 Rutinas de acondicionamiento físico</li>
             </ul>
+            <a href="contacto.html" class="btn-inscripcion">¡Inscríbete ya!</a>
         </div>
     </section>
     
-    <section id="ver-planes">
+    <section id="planes">
         <div class="contenedor">
-            <button class="btn-link">
-                <a href="planes.html">Ver nuestros planes</a>
-            </button>
+            <h2>ELIGE TU PLAN</h2>
+            <p>Contenido de la tabla de planes...</p>
+            <a href="contacto.html" class="btn-inscripcion">¡Inscríbete ya!</a>
         </div>
     </section>
+    
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo-col">
+                <img src="https://via.placeholder.com/100x40/222/f7a300?text=MKOMBA" alt="MKombat Academy Logo">
+                <p>Tu camino hacia la excelencia marcial.</p>
+            </div>
 
-    <div id="footer"></div> 
-    <script src="js/cargar.js"></script>
-    <script src="js/header.js"></script>
+            <div class="footer-links-col">
+                <h3>ENLACES RÁPIDOS</h3>
+                <ul>
+                    <li><a href="#mision">Misión</a></li>
+                    <li><a href="#vision">Visión</a></li>
+                    <li><a href="#servicios">Servicios</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-social-col">
+                <h3>SÍGUENOS</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-discord"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-contact-col">
+                <h3>CONTACTO</h3>
+                <p><i class="fa fa-map-marker-alt"></i> Av. Los Campeones 123</p>
+                <p><i class="fa fa-phone"></i> +51 987 654 321</p>
+                <p><i class="fa fa-envelope"></i> contacto@mcombat.com</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div>
+                © 2025 MKombat Academy.
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Función para el menú desplegable en móvil
+        function toggleMenu() {
+            const navMenu = document.getElementById('main-nav');
+            navMenu.classList.toggle('active');
+        }
+    </script>
 </body>
 </html>
