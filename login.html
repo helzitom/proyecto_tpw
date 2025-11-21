@@ -3,256 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inicia Sesión o Regístrate - MCombat Academy</title>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <title>Inicia Sesión o Regístrate - Academia de Box</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-    
-    <style>
-        
-        
-        body {
-            
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            margin: 0;
-            position: relative;
-            background-color: #222;
-            font-family: 'Roboto', sans-serif;
-            color: #333;
-        }
-
-        
-        body::before {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: url('assets/img/logo.png');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            
-            
-            filter: blur(3px) opacity(0.5);
-            z-index: -1;
-            
-            animation: backgroundFadeIn 2s ease-out forwards; 
-        }
-
-        
-        @keyframes backgroundFadeIn {
-            from {
-                filter: blur(5px) opacity(0.3);
-            }
-            to {
-                filter: blur(3px) opacity(0.5);
-            }
-        }
-
-        
-        .form-container {
-            z-index: 1; 
-            background-color: rgba(255, 255, 255, 0.95);
-            padding: 40px;
-            border-radius: 15px;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
-            text-align: center;
-            width: 100%;
-            max-width: 400px;
-            
-            
-            opacity: 0;
-            transform: translateY(20px);
-            animation: slideUp 0.7s forwards;
-            animation-delay: 0.3s;
-        }
-        
-        
-        @keyframes slideUp {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .form-container h3 {
-            color: #CC0000; /* Rojo */
-            font-size: 1.8em;
-            margin-bottom: 30px;
-        }
-        
-        
-        .input-form {
-            
-            display: flex;
-            align-items: center;
-            border: 2px solid #ccc;
-            border-radius: 8px;
-            margin-bottom: 25px;
-            transition: border-color 0.3s ease, box-shadow 0.3s ease;
-        }
-        
-        
-        .input-form:focus-within {
-            border-color: #f7a300;
-            box-shadow: 0 0 10px rgba(247, 163, 0, 0.5);
-        }
-
-        .input-form i {
-            color: #CC0000; /* Iconos Rojos */
-            padding: 0 10px;
-            font-size: 1.2em;
-        }
-
-        .input-form input {
-            border: none;
-            padding: 12px 0;
-            flex-grow: 1;
-            outline: none;
-            font-size: 1em;
-            background-color: transparent;
-        }
-
-        .form-container label {
-            display: block;
-            text-align: left;
-            margin-bottom: 8px;
-            font-weight: 700;
-            color: #555;
-        }
-
-        
-        
-        .btn {
-            background-color: #f7a300;
-            color: white;
-            padding: 12px;
-            border: none;
-            border-radius: 8px;
-            width: 100%;
-            margin-top: 20px;
-            font-size: 1.1em;
-            font-weight: 700;
-            cursor: pointer;
-            transition: background-color 0.3s ease, transform 0.3s ease;
-        }
-
-        
-        .btn:hover {
-            background-color: #CC0000;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-        }
-        
-        .form-container a {
-            color: #CC0000;
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-        
-        
-        .form-container a:hover {
-            color: #f7a300;
-            text-decoration: underline;
-        }
-
-        .other-logins {
-            
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin-top: 15px;
-        }
-
-        .other-logins a i {
-            font-size: 2em;
-            color: #222;
-            border: 2px solid #222;
-            border-radius: 50%;
-            padding: 10px;
-            width: 45px;
-            height: 45px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            transition: color 0.3s, border-color 0.3s, transform 0.3s;
-        }
-        
-        
-        .other-logins a i:hover {
-            color: #f7a300;
-            border-color: #f7a300;
-            transform: scale(1.1);
-        }
-        
-        
-        footer {
-            margin-top: auto;
-            padding: 10px 0;
-            width: 100%;
-            text-align: center;
-        }
-
-        .copyright {
-            color: rgba(255, 255, 255, 0.7);
-            font-size: 0.9em;
-        }
-        
-        
-        @media (max-width: 450px) {
-            .form-container {
-                padding: 20px;
-                margin: 20px;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
 </head>
 <body>
-    <div class="form-container">
-        <form action="">
-            <h3>Inicio de Sesión</h3>
-            <label for="input-usuario">Usuario</label>
-            <div class="input-form">
-                <i class="bi bi-person"></i>
-                <input type="text" id="input-usuario" class="input-usuario" placeholder="Ingrese su usuario">
+    <div id="header"></div>
+    
+    <div class="login-wrapper">
+        <div class="form-container">
+            <div class="logo-container">
+                <img src="assets/img/logo.png" alt="Logo Academia" class="header-logo">
             </div>
-            
-            <label for="input-contraseña">Contraseña</label>
-            <div class="input-form">
-                <i class="bi bi-lock"></i>
-                <input type="password" id="input-contraseña" class="input-contraseña" placeholder="Ingrese su contraseña">
-            </div>
-            
-            <a href="#">¿Olvidaste la contraseña?</a>
-            <button class="btn" type="submit">Ingresar</button>
-            
-            <p style="margin-top: 20px;">¿Aún no tienes una cuenta?
-                <a href="#">Registrate aquí</a>
-            </p>
-            <p style="margin-top: 20px;">O con</p>
-            
-            <div class="other-logins">
-                <a href="https://facebook.com">
-                    <i class="bi bi-facebook"></i>
-                </a>
-                <a href="https://gmail.com">
-                    <i class="bi bi-google"></i>
-                </a>
-                <a href="https://account.apple.com/sign-in">
-                    <i class="bi bi-apple"></i>
-                </a>
-            </div>
-        </form>
+            <form id="loginForm">
+                <h3>Inicio de Sesión</h3>
+                <label for="usuario">Usuario</label>
+                <div class="input-form">
+                    <i class="bi bi-person"></i>
+                    <input type="text" id="usuario" class="input-usuario" placeholder="Ingrese su usuario">
+                </div>
+                <label for="password">Contraseña</label>
+                <div class="input-form">
+                    <i class="bi bi-lock"></i>
+                    <input type="password" id="password" class="input-contraseña" placeholder="Ingrese su contraseña">
+                </div>
+                <a href="#" class="forgot-password">¿Olvidaste la contraseña?</a>
+                <button class="btn" type="submit">Ingresar</button>
+                <p class="register-text">¿Aún no tienes una cuenta?
+                    <a href="registro.html" class="register-link">Regístrate aquí</a>
+                </p>
+                <p class="separator">O inicia sesión con</p>
+                <div class="other-logins">
+                    <a href="https://facebook.com" target="_blank" class="social-btn facebook">
+                        <i class="bi bi-facebook"></i>
+                    </a>
+                    <a href="https://gmail.com" target="_blank" class="social-btn google">
+                        <i class="bi bi-google"></i>
+                    </a>
+                    <a href="https://account.apple.com/sign-in" target="_blank" class="social-btn apple">
+                        <i class="bi bi-apple"></i>
+                    </a>
+                </div>
+            </form>
+        </div>
     </div>
-    <footer>
-        <p class="copyright">MKombat © - 2025 </p>
-    </footer>
+
+    <div id="footer"></div> 
+    <script src="js/cargar.js"></script>
+    <script src="js/header.js"></script>
+    <script src="js/login.js"></script>
 </body>
 </html>
