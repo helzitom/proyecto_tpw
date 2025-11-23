@@ -270,13 +270,15 @@
                 top: 50%;
                 transform: translateY(-50%);
                 flex-shrink: 0; 
-                margin-left: 0; /* Anulamos el margin-left: auto de desktop */
+                margin-left: 0; 
             }
         }
         /* ================================================= */
         
         /* FOOTER STYLES */
         footer {
+            background-color: #1A237E;
+            color: white;
             padding: 40px 20px;
         }
 
@@ -292,6 +294,26 @@
         .footer-content > div {
             flex: 1 1 200px; 
             margin: 10px;
+        }
+
+        /* Nuevo wrapper para el logo del footer */
+        .logo-footer-wrapper {
+            border: 2px solid #f7a300; /* Borde dorado */
+            border-radius: 50%; 
+            padding: 3px; 
+            display: inline-flex; /* Para que se ajuste al tamaño del contenido */
+            justify-content: center;
+            align-items: center;
+            width: 70px; /* Tamaño más grande para el logo del footer */
+            height: 70px; /* Tamaño más grande para el logo del footer */
+            box-sizing: border-box; 
+            margin-bottom: 15px; /* Espacio debajo del logo */
+        }
+        .footer-logo-col img {
+            height: 100%; 
+            width: 100%;
+            object-fit: contain; 
+            border-radius: 50%; 
         }
 
         .footer-logo-col p {
@@ -349,6 +371,10 @@
             }
             .footer-content > div {
                 margin: 20px 0;
+            }
+            .logo-footer-wrapper {
+                margin-left: auto; /* Centra el logo en móvil */
+                margin-right: auto; /* Centra el logo en móvil */
             }
         }
         
@@ -460,7 +486,9 @@
     <footer>
         <div class="footer-content">
             <div class="footer-logo-col">
-                <img src="assets/img/logo.png" alt="MKombat Academy Logo" style="height:40px; width:auto; object-fit: contain;">
+                <div class="logo-footer-wrapper">
+                    <img src="assets/img/logo.png" alt="MKombat Academy Logo">
+                </div>
                 <p>Tu camino hacia la excelencia marcial.</p>
             </div>
 
@@ -500,7 +528,6 @@
     
     <script>
         function toggleMenu() {
-            // Esta función está inactiva ya que el menú no se pliega.
             console.log("Menú plegable deshabilitado.");
         }
     </script>
