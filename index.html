@@ -5,18 +5,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Academia de Box - Fuerza & Disciplina</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         /* ======================================= */
         /* 1. ESTILOS GENERALES Y CONSISTENCIA */
         /* ======================================= */
         
+        /* Paleta: Azul Principal (#1A237E) | Dorado/Naranja (#F7A300) | Rojo de Boxeo (#CC0000) */
+        
         body {
             font-family: 'Roboto', sans-serif;
-            background-color: #f0f0f0; 
-            color: #333;
+            background-color: #1A237E; 
+            color: #333; 
             margin: 0;
-            padding-top: 60px; /* Espacio para el header fijo */
+            padding-top: 60px; 
             line-height: 1.6;
             overflow-x: hidden;
         }
@@ -34,9 +37,26 @@
             font-weight: 700;
         }
 
-        /* Secciones con Fondo Oscuro: Header, Inicio y Footer */
-        .header-nav, footer, #inicio {
-            background-color: #222; 
+        section {
+            padding: 60px 20px;
+            text-align: center;
+        }
+        
+        /* Secciones de contenido con estilo de tarjeta */
+        #mision, #vision, #servicios, #planes {
+            background-color: #ffffff; 
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+        }
+
+        /* Secciones oscuras */
+        #inicio {
+            background-color: #1A237E; 
+            color: white;
+        }
+        footer {
+            background-color: #1A237E;
             color: white;
         }
         
@@ -44,26 +64,76 @@
               color: #f7a300; 
         }
 
+        /* Botones de acción */
+        .btn-inscripcion {
+            display: inline-block;
+            background-color: #CC0000;
+            color: white;
+            padding: 10px 25px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 700;
+            margin-top: 20px;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .btn-inscripcion:hover {
+            background-color: #f7a300; 
+            box-shadow: 0 0 15px rgba(247, 163, 0, 0.7);
+        }
+
         /* ======================================= */
-        /* 2. HEADER Y NAVEGACIÓN (HEADER NEGRO) */
+        /* 2. HEADER Y NAVEGACIÓN (Desktop Centrado) */
         /* ======================================= */
         .header-nav {
-            padding: 10px 20px;
+            background-color: #ffffff; 
+            padding: 0 20px; 
             display: flex;
-            justify-content: space-between;
+            justify-content: space-between; 
             align-items: center;
             position: fixed;
             top: 0;
             width: 100%;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
             z-index: 1000;
+            height: 60px; 
         }
 
-        .logo {
-            font-size: 1.5em;
-            font-weight: 700;
-            color: #f7a300; 
-            text-decoration: none;
+        /* Contenedor del Logo y Menú que se centrará (Desktop) */
+        .header-center-container {
+            display: flex;
+            align-items: center;
+            /* Técnica de centrado absoluto */
+            position: absolute; 
+            left: 50%;
+            transform: translateX(-50%);
+            max-width: fit-content; 
+        }
+        
+        /* Logo: AUMENTADO SUTILMENTE A 55PX */
+        .logo-container {
+            border: 2px solid #f7a300; 
+            border-radius: 50%; 
+            padding: 3px; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 55px; 
+            height: 55px; 
+            box-sizing: border-box; 
+            margin-right: 40px; 
+            flex-shrink: 0; 
+        }
+        .logo-container .logo-img {
+            height: 100%; 
+            width: 100%;
+            object-fit: contain; 
+            border-radius: 50%; 
+        }
+
+        /* El logo que está fuera del contenedor centrado lo ocultamos por defecto (se usará en móvil) */
+        .header-nav > .logo-container {
+            display: none; 
         }
         
         .nav-menu {
@@ -73,75 +143,216 @@
             padding: 0;
         }
 
+        .nav-menu li {
+            position: relative; 
+            border-radius: 5px;
+            margin: 0 8px; 
+            flex-shrink: 0; 
+        }
+
         .nav-menu li a {
-            color: white;
+            color: #333; 
             text-decoration: none;
             padding: 10px 15px;
             display: block;
-            transition: background-color 0.3s ease;
         }
 
+        /* Efecto de subrayado (Desktop) */
+        .nav-menu li a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0%; 
+            height: 3px; 
+            background-color: #f7a300; 
+            transition: width 0.4s ease-out; 
+            border-radius: 5px;
+        }
         .nav-menu li a:hover {
-            background-color: rgba(204, 0, 0, 0.5); 
+            color: #f7a300; 
+            background-color: rgba(247, 163, 0, 0.1); 
+        }
+        .nav-menu li a:hover::after {
+            width: 100%; 
+        }
+
+        /* Botón de Cerrar Sesión (Siempre a la derecha) */
+        .logout-btn { 
+            list-style: none;
+            flex-shrink: 0; 
+            /* En Desktop, lo alineamos automáticamente a la derecha del header */
+            margin-left: auto; 
         }
         
-        /* Estilo del botón Logout/Cerrar Sesión */
-        .login-btn a {
-            background-color: #f7a300; 
+        .logout-btn a {
+            background-color: #CC0000; 
             padding: 8px 15px;
             border-radius: 5px;
-            margin-left: 20px;
-            color: #222 !important; 
-            transition: background-color 0.3s;
-        }
-        .login-btn a:hover {
-            background-color: #CC0000; 
-            color: white !important;
+            color: white !important; 
+            font-weight: 700;
+            text-decoration: none; 
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
         }
         
-        /* ESTILOS DEL MENÚ DESPLEGABLE (MÓVIL) */
-        .menu-toggle {
-            display: none; /* Oculto por defecto en escritorio */
-            font-size: 1.5em;
-            cursor: pointer;
-            color: #f7a300; 
+        .logout-btn a:hover {
+            background-color: #f7a300; 
+            color: white !important; 
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
         }
-
+        
+        /* Ocultamos el menú toggle en ambas vistas */
+        .menu-toggle {
+            display: none; 
+        }
+        
+        /* ================================================= */
+        /* RESPONSIVE EN MÓVIL (Horizontal, Logo Izquierda, Botón Derecha) */
+        /* ================================================= */
         @media (max-width: 900px) {
             
-            .nav-menu {
-                display: none; /* Oculta el menú normal */
-                flex-direction: column;
-                width: 100%;
-                position: absolute;
-                top: 60px;
-                left: 0;
-                background-color: #222;
-                box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+            .header-nav {
+                justify-content: flex-start; 
+                overflow-x: hidden; 
             }
             
-            .nav-menu.active {
-                display: flex; /* Muestra el menú cuando está activo */
+            /* El header-center-container tendrá el logo y el menú (scrollable) */
+            .header-center-container {
+                display: flex; 
+                position: static;
+                transform: none;
+                /* El ancho es calculado para dejar espacio al botón de Logout a la derecha */
+                width: calc(100% - 130px); 
+                flex-grow: 0;
+                justify-content: flex-start;
+                min-width: fit-content;
+                
+                /* Agregamos el scroll horizontal a este contenedor */
+                overflow-x: auto; 
+                -ms-overflow-style: none;
+                scrollbar-width: none;
+            }
+            .header-center-container::-webkit-scrollbar {
+                display: none;
             }
 
-            .nav-menu li {
-                text-align: center;
-                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            /* Logo en móvil */
+            .header-center-container > .logo-container {
+                display: flex; 
+                width: 50px; 
+                height: 50px;
+                margin-right: 15px; 
+                flex-shrink: 0;
             }
             
-            .menu-toggle {
-                display: block; /* Muestra el icono de la hamburguesa */
+            /* Menú en móvil */
+            .nav-menu {
+                display: flex; 
+                flex-direction: row; 
+                flex-wrap: nowrap;
+                margin: 0;
+                min-width: fit-content; 
+            }
+            
+            .nav-menu li {
+                margin: 0 5px; 
+            }
+            
+            .nav-menu li a {
+                padding: 10px 10px; 
+                white-space: nowrap; 
+            }
+            
+            /* Botón de Logout: Fijo a la derecha en móvil */
+            .logout-btn {
+                position: absolute; 
+                right: 20px; 
+                top: 50%;
+                transform: translateY(-50%);
+                flex-shrink: 0; 
+                margin-left: 0; /* Anulamos el margin-left: auto de desktop */
+            }
+        }
+        /* ================================================= */
+        
+        /* FOOTER STYLES */
+        footer {
+            padding: 40px 20px;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        .footer-content > div {
+            flex: 1 1 200px; 
+            margin: 10px;
+        }
+
+        .footer-logo-col p {
+            font-size: 0.9em;
+            color: #CCCCCC;
+        }
+
+        .footer-links-col h3, .footer-social-col h3, .footer-contact-col h3 {
+            color: #f7a300;
+            font-size: 1.2em;
+            margin-bottom: 15px;
+        }
+
+        .footer-links-col ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-links-col a, .footer-contact-col p {
+            color: #ffffff;
+            text-decoration: none;
+            margin-bottom: 8px;
+            display: block;
+            font-size: 0.95em;
+        }
+
+        .footer-links-col a:hover {
+            color: #f7a300;
+        }
+
+        .social-icons a {
+            color: #ffffff;
+            font-size: 1.5em;
+            margin-right: 15px;
+            transition: color 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: #f7a300;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            margin-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.8em;
+            color: #AAAAAA;
+        }
+        
+        @media (max-width: 768px) {
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            .footer-content > div {
+                margin: 20px 0;
             }
         }
         
-        /* ======================================= */
-        /* 3. SECCIÓN INICIO (IMÁGENES) */
-        /* ======================================= */
-        section {
-            padding: 60px 20px;
-            text-align: center;
-        }
-        
+        /* ESTILOS DE INICIO (IMÁGENES) */
         #inicio .imagenes {
             display: flex;
             justify-content: center;
@@ -149,103 +360,56 @@
             margin-top: 30px;
         }
         
-        #inicio img {
-            max-width: 100%;
+        #inicio .imagenes img {
             width: 45%;
+            max-width: 400px;
             height: auto;
             border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
             object-fit: cover;
-            transition: transform 0.3s ease;
         }
         
-        /* ======================================= */
-        /* 4. FOOTER (PIE DE PÁGINA NEGRO) */
-        /* ======================================= */
-        footer {
-            padding: 40px 20px;
-            text-align: center;
+        @media (max-width: 768px) {
+            #inicio .imagenes {
+                flex-direction: column;
+                align-items: center;
+            }
+            #inicio .imagenes img {
+                width: 90%;
+            }
         }
         
-        .footer-content {
-            display: flex;
-            flex-wrap: wrap; 
-            justify-content: space-between;
-            max-width: 1200px;
-            margin: 0 auto 30px auto;
-            text-align: left;
-            gap: 20px;
-        }
-        
-        .footer-logo-col, .footer-links-col, .footer-social-col, .footer-contact-col {
-            flex: 1; 
-            min-width: 200px;
-            padding: 10px;
-        }
-        
-        footer h3 {
-            color: #f7a300;
-            margin-bottom: 15px;
-            font-size: 1.2em;
-        }
-        
-        .footer-links-col ul {
-            list-style: none;
-            padding: 0;
-        }
-        
-        .footer-links-col ul li a {
-            color: #ccc;
-            text-decoration: none;
-            line-height: 2.2;
-        }
-        
-        /* Iconos de Redes Sociales */
-        .social-icons a {
-            display: inline-block;
-            margin-right: 15px;
-            color: white;
-            font-size: 1.5em;
-            transition: color 0.3s;
-        }
-
-        .social-icons a:hover {
-            color: #CC0000; 
-        }
-
-        .footer-bottom {
-            margin-top: 30px;
-            padding-top: 20px;
-            border-top: 1px solid #444;
-            display: flex;
-            justify-content: space-between;
-            font-size: 0.8em;
-            color: #aaa;
-        }
     </style>
 </head>
 
 <body>
 
     <header id="header" class="header-nav">
-        <a href="index.html" class="logo">MCombat Academy</a>
         
+        <div class="header-center-container">
+            <div class="logo-container">
+                <img src="assets/img/logo.png" alt="Logo MCombat" class="logo-img">
+            </div>
+            
+            <nav>
+                <ul class="nav-menu" id="main-nav">
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#mision">Misión</a></li>
+                    <li><a href="#vision">Visión</a></li>
+                    <li><a href="#servicios">Servicios</a></li>
+                    <li><a href="#planes">Planes</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+        
+        <li class="logout-btn">
+            <a href="login.html">Cerrar Sesión</a>
+        </li>
+
         <div class="menu-toggle" onclick="toggleMenu()">
             <i class="fa fa-bars"></i>
         </div>
-
-        <nav>
-            <ul class="nav-menu" id="main-nav">
-                <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#mision">Misión</a></li>
-                <li><a href="#vision">Visión</a></li>
-                <li><a href="#servicios">Servicios</a></li>
-                <li><a href="#planes">Planes</a></li>
-                <li><a href="contacto.html">Contacto</a></li>
-                <li class="login-btn">
-                    <a href="login.html" onclick="return confirm('¿Está seguro que desea cerrar la sesión de Intranet?')">Logout</a>
-                </li>
-            </ul>
-        </nav>
     </header>
 
     <section id="inicio">
@@ -296,7 +460,7 @@
     <footer>
         <div class="footer-content">
             <div class="footer-logo-col">
-                <img src="https://via.placeholder.com/100x40/222/f7a300?text=MKOMBA" alt="MKombat Academy Logo">
+                <img src="assets/img/logo.png" alt="MKombat Academy Logo" style="height:40px; width:auto; object-fit: contain;">
                 <p>Tu camino hacia la excelencia marcial.</p>
             </div>
 
@@ -335,10 +499,9 @@
     </footer>
     
     <script>
-        // Función para el menú desplegable en móvil
         function toggleMenu() {
-            const navMenu = document.getElementById('main-nav');
-            navMenu.classList.toggle('active');
+            // Esta función está inactiva ya que el menú no se pliega.
+            console.log("Menú plegable deshabilitado.");
         }
     </script>
 </body>
