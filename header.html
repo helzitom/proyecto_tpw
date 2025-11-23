@@ -1,8 +1,16 @@
 <header>
     <div class="header-container">
-        <a href="index.html">
-            <img src="assets/img/logo.png" alt="Logo de MKombat" class="logo-img">
-        </a>
+        <div class="logo-section">
+            <a href="index.html">
+                <img src="assets/img/logo.png" alt="Logo de MKombat" class="logo-img">
+            </a>
+        </div>
+        
+        <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
         
         <nav id="mainNav">
             <a href="index.html"><i class="fas fa-home"></i> Inicio</a>
@@ -12,4 +20,7 @@
             <a href="contacto.html"><i class="fas fa-phone"></i> Contacto</a>
             <a href="login.html"><i class="fas fa-user"></i> Login</a>
         </nav>
+    </div>
 </header>
+
+<div class="overlay" id="overlay"></div>

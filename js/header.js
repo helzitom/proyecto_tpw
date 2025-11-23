@@ -9,47 +9,53 @@ function initHeader() {
         return;
     }
     
-    menuToggle.addEventListener('click', function() {
-        mainNav.classList.toggle('active');
-        overlay.classList.toggle('active');
-        body.classList.toggle('no-scroll');
-        
-        const spans = menuToggle.querySelectorAll('span');
-        if (mainNav.classList.contains('active')) {
-            spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
-            spans[1].style.opacity = '0';
-            spans[2].style.transform = 'rotate(-45deg) translate(7px, -6px)';
-        } else {
-            spans[0].style.transform = 'none';
-            spans[1].style.opacity = '1';
-            spans[2].style.transform = 'none';
-        }
-    });
-    
-    overlay.addEventListener('click', function() {
+    // Función para cerrar el menú
+    function closeMenu() {
+        menuToggle.classList.remove('active');
         mainNav.classList.remove('active');
         overlay.classList.remove('active');
         body.classList.remove('no-scroll');
-        
-        const spans = menuToggle.querySelectorAll('span');
-        spans[0].style.transform = 'none';
-        spans[1].style.opacity = '1';
-        spans[2].style.transform = 'none';
-    });
+    }
     
+    // Función para abrir/cerrar el menú
+    function toggleMenu() {
+        menuToggle.classList.toggle('active');
+        mainNav.classList.toggle('active');
+        overlay.classList.toggle('active');
+        body.classList.toggle('no-scroll');
+    }
+    
+    // Toggle del menú con el botón hamburguesa
+    menuToggle.addEventListener('click', toggleMenu);
+    
+    // Cerrar menú al hacer clic en el overlay
+    overlay.addEventListener('click', closeMenu);
+    
+    // Cerrar menú al hacer clic en un enlace (solo en móvil)
     const navLinks = mainNav.querySelectorAll('a');
     navLinks.forEach(link => {
         link.addEventListener('click', function() {
-            mainNav.classList.remove('active');
-            overlay.classList.remove('active');
-            body.classList.remove('no-scroll');
-            
-            const spans = menuToggle.querySelectorAll('span');
-            spans[0].style.transform = 'none';
-            spans[1].style.opacity = '1';
-            spans[2].style.transform = 'none';
+            if (window.innerWidth <= 768) {
+                closeMenu();
+            }
         });
     });
+    
+    // Cerrar menú al cambiar tamaño de ventana a desktop
+    window.addEventListener('resize', function() {
+        if (window.innerWidth > 768 && mainNav.classList.contains('active')) {
+            closeMenu();
+        }
+    });
+    
+    // Cerrar menú con tecla ESC
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && mainNav.classList.contains('active')) {
+            closeMenu();
+        }
+    });
+    
+    console.log('Header inicializado correctamente');
 }
 
 // Inicializar el header cuando el DOM esté listo

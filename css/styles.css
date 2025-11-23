@@ -154,6 +154,40 @@ footer {
     background: linear-gradient(135deg, #ffb733, #f7a300);
 }
 
+/* ======== BOTÓN INSCRIPCIÓN ======== */
+.btn-inscripcion {
+    display: inline-block;
+    padding: 18px 40px;
+    background: linear-gradient(135deg, #28a745, #34d058);
+    color: #fff;
+    font-size: 1.2em;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 20px rgba(40, 167, 69, 0.4);
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.btn-inscripcion:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 8px 25px rgba(40, 167, 69, 0.6);
+    background: linear-gradient(135deg, #34d058, #28a745);
+}
+
+.btn-inscripcion:active {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 15px rgba(40, 167, 69, 0.5);
+}
+
+.btn-inscripcion i {
+    margin-right: 10px;
+    font-size: 1.1em;
+}
+
 /* ======== MEDIA QUERIES ======== */
 
 /* TABLETAS */
@@ -210,5 +244,10 @@ footer {
         width: 85%;
         font-size: 1em;
         padding: 12px 25px;
+    }
+    .btn-inscripcion {
+        width: 85%;
+        font-size: 1em;
+        padding: 15px 30px;
     }
 }
